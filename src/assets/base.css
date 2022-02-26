@@ -1,0 +1,11 @@
+/* color palette from <https://github.com/vuejs/theme> */
+.nav-var-fix{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 1000px) {
+    .nav-var-fix {
+     display: none;
+    }
+  }
