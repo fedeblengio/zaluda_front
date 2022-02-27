@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand">Zaluda</a>
+        <a class="navbar-brand color-white">Zaluda</a>
         <button
           class="navbar-toggler"
           type="button"
