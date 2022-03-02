@@ -10,6 +10,7 @@
     "@vue/composition-api": "^1.4.6",
     "axios": "^0.26.0",
     "vue": "^2.6.14",
+    "vue-country-flag": "^2.3.2",
     "vue-google-oauth2": "^1.5.8",
     "vue-headful": "^2.1.0",
     "vue-router": "^3.5.3"

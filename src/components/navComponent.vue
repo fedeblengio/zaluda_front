@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="/home">Zaluda</a>
         <button
@@ -24,16 +24,23 @@
                 >Welcome, {{ userInfo.tf }}</a
               >
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/home"
                 >Home</a
               >
-            </li>
+            </li> -->
             <li>
-              <a class="nav-link active" aria-current="page">
-                <button @click="login()" v-if="!userInfo">Login</button>
-                <button @click="logOut()" v-else>Sign out</button>
-              </a>
+             
+                <div class="loginBtn">
+                  <div class="loginImg" v-if="!userInfo">
+                    <img src="/src/assets/img/google.png" @click="login()" />
+                  </div>
+                  <button @click="login()" v-if="!userInfo" class="loginBtn">
+                    Sign up with Google
+                  </button>
+                  <button @click="logOut()" v-else class="" style="">Sign out</button>
+                </div>
+             
             </li>
           </ul>
         </div>

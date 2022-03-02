@@ -2,7 +2,10 @@ import App from './App.vue'
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 import VueCompositionAPI, { createApp, h } from '@vue/composition-api'
+import CountryFlag from 'vue-country-flag'
 
+
+Vue.component('country-flag', CountryFlag)
 Vue.use(VueCompositionAPI)
 
 const routes = [
