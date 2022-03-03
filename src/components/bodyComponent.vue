@@ -3,22 +3,34 @@
     <section class="py-5">
       <div class="container photo-cont">
         <div class="photo-card" v-for="todo in user" :key="todo.id">
-          <div class="">
-            <img class="" :src="img + todo.photo" alt="..." />
-          </div>
-          <div class="photo-card-text">
-            <h3>
-              <country-flag :country="todo.country" /> &nbsp;{{ todo.name }}
-              {{ todo.last_name }}
-            </h3>
-          </div>
-          <div class="pohto-card-price">
-            <p>${{ todo.price }}</p>
-          </div>
+          <router-link
+            :to="{
+              name: 'idolComponent',
+              params: {
+                name: todo.name,
+                last_name: todo.last_name,
+                img: todo.photo,
+                flag: todo.country,
+              },
+            }"
+          >
+            <div class="">
+              <img class="" :src="img + todo.photo" alt="..." />
+            </div>
+            <div class="photo-card-text">
+              <h3>
+                <country-flag :country="todo.country" /> &nbsp;{{ todo.name }}
+                {{ todo.last_name }}
+              </h3>
+            </div>
+            <div class="pohto-card-price">
+              <p>${{ todo.price }}</p>
+            </div>
+          </router-link>
         </div>
       </div>
     </section>
-  </div>
+     </div>
 </template>
 <script >
 import { global } from "../global";

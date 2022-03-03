@@ -2,7 +2,7 @@
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/home">Zaluda</a>
+        <a class="navbar-brand" href="/">Zaluda</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -21,16 +21,9 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li>
               <a class="nav-link active" aria-current="page" v-if="isLogin"
-                >Welcome, {{ userInfo.tf }}</a
-              >
+                >Welcome, {{ userInfo.tf }}</a>
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/home"
-                >Home</a
-              >
-            </li> -->
             <li>
-             
                 <div class="loginBtn">
                   <div class="loginImg" v-if="!userInfo">
                     <img src="/src/assets/img/google.png" @click="login()" />
@@ -40,7 +33,6 @@
                   </button>
                   <button @click="logOut()" v-else class="" style="">Sign out</button>
                 </div>
-             
             </li>
           </ul>
         </div>
