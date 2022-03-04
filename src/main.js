@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 const routes = [
     { path: '/', redirect: '/home' },
     { path: '/home', name: 'body', component: BodyComponent },
-    { path: '/:name-:last_name', name: 'idolComponent', component: idolComponent },
+    { path: '/:Datos', name: 'idolComponent', component: idolComponent },
     { path: '*', name: 'error404', component: ErrorComponent },
 
 ];

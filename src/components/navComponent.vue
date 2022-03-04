@@ -19,21 +19,23 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-            <li>
-              <a class="nav-link active" aria-current="page" v-if="isLogin"
-                >Welcome, {{ userInfo.tf }}</a>
+            <li  v-if="isLogin">
+              <a class="nav-link active" aria-current="page"
+                >Welcome, {{ userName }}</a
+              >
             </li>
-            <li>
-                <div class="loginBtn">
-                  <div class="loginImg" v-if="!userInfo">
-                    <img src="/src/assets/img/google.png" @click="login()" />
-                  </div>
-                  <button @click="login()" v-if="!userInfo" class="loginBtn">
-                    Sign up with Google
-                  </button>
-                  <button @click="logOut()" v-else class="" style="">Sign out</button>
+            <li v-else>
+              <div class="loginBtn">
+                <div class="loginImg">
+                  <img src="/src/assets/img/google.png" @click="login()" />
                 </div>
-            </li>
+                <button @click="login()" class="loginBtn">
+                  Sign up with Google
+                </button>
+              </div>
+              <li>
+                <button @click="logOut()" class="" style="" v-if="isLogin">Sign out</button>
+              </li>
           </ul>
         </div>
       </div>
@@ -49,18 +51,32 @@ export default {
     return {
       isLogin: false,
       userInfo: "",
+      userName: "",
     };
+  },
+  mounted() {
+    if (localStorage.getItem("login")) {
+      console.log(localStorage.getItem("login"));
+      this.isLogin = true;
+      this.userName = localStorage.getItem("user");
+    }else{
+       localStorage.clear();
+    }
   },
   methods: {
     async logOut() {
       const result = await this.$gAuth.signOut();
       this.isLogin = false;
       this.userInfo = "";
+      localStorage.clear();
     },
     async login() {
       const googleUser = await this.$gAuth.signIn();
       this.userInfo = googleUser.getBasicProfile();
       this.isLogin = this.$gAuth.isAuthorized;
+      localStorage.setItem("login", this.isLogin);
+      localStorage.setItem("user", this.userInfo.tf);
+      this.userName = this.userInfo.tf;
       this.saveInfoUsers();
     },
     saveInfoUsers() {
@@ -76,7 +92,7 @@ export default {
       };
       axios.post(global.url + "users", data, config).then((res) => {
         if (res.status == 200) {
-          console.log("bien");
+          localStorage.setItem("userId", this.userInfo.TW);
         }
       });
     },

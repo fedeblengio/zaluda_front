@@ -9,8 +9,7 @@
               params: {
                 name: todo.name,
                 last_name: todo.last_name,
-                img: todo.photo,
-                flag: todo.country,
+                Datos: [todo],
               },
             }"
           >
@@ -30,7 +29,7 @@
         </div>
       </div>
     </section>
-     </div>
+  </div>
 </template>
 <script >
 import { global } from "../global";

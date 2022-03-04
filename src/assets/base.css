@@ -70,3 +70,54 @@
   .loginImg img:hover{
 cursor: pointer; 
 }
+.idol-profile{
+    display: flex;
+    flex-direction: row;
+}
+.idol-description{
+    margin-top:30px;
+    display: flex;
+    flex-direction: row;
+    border:1px solid white;
+    padding:4px;
+    background-color: #b4b4b4;
+    max-width: 750px;
+}
+.idol-description h2{
+    color:white;
+  text-align: center;
+}
+.idol-description h3{
+    color:white;
+    font-size: 21px;
+}
+.idol-description p{
+    color:white;
+ 
+}
+.idol-description img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius:50%;
+}
+.idol-description-price{
+    text-align: center;
+    font-size:30px;
+}
+
+
+.idol-message{
+    border:1px solid white;
+    background-color: #b4b4b4;
+    margin-top:30px;
+    margin-left: 10px;
+    width: 390px;
+}
+.idol-message textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:350px;
+    height:300px;
+}
