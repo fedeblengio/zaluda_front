@@ -1,123 +1,258 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300&display=swap');
-
-
-.nav-var-fix{
+.nav-var-fix {
     display: flex;
     flex-direction: row-reverse;
 }
 
 @media only screen and (max-width: 1000px) {
     .nav-var-fix {
-     display: none;
+        display: none;
     }
-  }
+    .idol-message {
+        margin-left: 0 !important;
+    }
+    .singOutBtn {
+        margin-left: 0px !important;
+    }
+}
 
-  body {
-   background-color: #161616;
-   font-family: sans-serif;
-   }
+body {
+    background-color: #f4f4f7;
+    font-family: 'Montserrat', sans-serif;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: 'Montserrat', sans-serif;
+}
 
-   .photo-cont{
-       display:flex;
-       flex-direction: row;
-       flex-wrap: wrap;
-       justify-content: center;
-   }
-   .photo-cont img{
-       width:12rem;
-       height:16rem;
-       margin:0.5rem;
-       border-radius: 7px;
-       object-fit: cover;
-      
-   }
-  
- .photo-card-text h3{
-     font-size: 18px;
-     margin-left: 15px; 
-     color: white
- }
-
- .pohto-card-price p{
-     font-weight: bold;
-     font-size: 15px;
-     margin-left: 15px;
-     color: white
- }
- .photo-card:hover{
-     cursor: pointer;
- }
- .loginBtn{
+.photo-cont {
     display: flex;
     flex-direction: row;
-    width:200px;
-    height:40px;
-    align-items: center;
-    color:white;
-    background-color: #161616;  
- }
-.loginBtn button{
-    border:none;
+    flex-wrap: wrap;
+    justify-content: center;
 }
- .loginImg{
-    border:none;
- }
- .loginImg img{
-     width: 40px;
-     height: 40px;
- }
-  .loginImg img:hover{
-cursor: pointer; 
-}
-.idol-profile{
-    display: flex;
-    flex-direction: row;
-}
-.idol-description{
-    margin-top:30px;
-    display: flex;
-    flex-direction: row;
-    border:1px solid white;
-    padding:4px;
-    background-color: #b4b4b4;
-    max-width: 750px;
-}
-.idol-description h2{
-    color:white;
-  text-align: center;
-}
-.idol-description h3{
-    color:white;
-    font-size: 21px;
-}
-.idol-description p{
-    color:white;
- 
-}
-.idol-description img{
-    width: 300px;
-    height: 300px;
+
+.photo-cont img {
+    width: 12rem;
+    height: 16rem;
+    margin: 0.5rem;
+    border-radius: 7px;
     object-fit: cover;
-    border-radius:50%;
 }
-.idol-description-price{
+
+.photo-card-text h3 {
+    font-size: 18px;
+    margin-left: 15px;
+    color: grey;
+    font-weight: bold;
+}
+
+.pohto-card-price p {
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 15px;
+    color: grey
+}
+
+.photo-card:hover {
+    cursor: pointer;
+}
+
+.loginBtn {
+    display: flex;
+    flex-direction: row;
+    width: 200px;
+    height: 40px;
+    align-items: center;
+    color: white;
+    background-color: #161616;
+}
+
+.loginBtn button {
+    border: none;
+    outline: none;
+    text-align: inherit;
+    font-size: 15px;
+}
+
+.singOutBtn {
+    margin-left: 30px;
+    margin-top: 6px;
+    border-radius: 7px;
+    background-color: #161616;
+    color: white;
+    border: 1px solid white;
+    width: 100px;
+}
+
+.singOutBtn:hover {
+    cursor: pointer;
+    color: #161616;
+    background-color: white;
+}
+
+.loginBtn:hover {
+    cursor: pointer;
+}
+
+.loginImg {
+    border: none;
+    outline: none;
+}
+
+.loginImg img {
+    width: 25px;
+    height: 25px;
+    outline: none;
+}
+
+.idol-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.idol-description {
+    margin-top: 30px;
+    width: 350px;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+}
+
+.idol-description-header {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.idol-description h2 {
+    color: grey;
     text-align: center;
-    font-size:30px;
+    margin-left: 15px;
 }
 
-
-.idol-message{
-    border:1px solid white;
-    background-color: #b4b4b4;
-    margin-top:30px;
-    margin-left: 10px;
-    width: 390px;
+.idol-description h3 {
+    color: grey;
+    font-size: 15px;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
-.idol-message textarea{
+
+.idol-description p {
+    color: grey;
+}
+
+.idol-description img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
     display: block;
     margin-left: auto;
-    margin-right: auto;
-    width:350px;
-    height:300px;
+}
+
+.idol-description-text {
+    width: 85%;
+    margin: 20px auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.idol-message {
+    border-radius: 7px;
+    box-shadow: 0 0 30px rgb(0 0 0 / 10%);
+    background-color: white;
+    margin-top: 30px;
+    margin-left: 80px;
+    width: 350px;
+}
+
+.idol-message-conteiner {
+    width: 85%;
+    margin: 10px auto;
+}
+
+.idol-message h4 {
+    color: grey;
+    font-weight: bold;
+    font-weight: 700;
+}
+
+.idol-description-price {
+    display: flex;
+    flex-direction: row-reverse;
+    font-weight: bold;
+    color: grey;
+}
+
+.idol-description-forwho {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.idol-description-element {
+    width: 100px;
+    height: 100px;
+    border-radius: 7px;
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    margin-top: 10px;
+}
+
+.idol-description-element i {
+    font-size: 35px;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.idol-description-element p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.idol-description-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.idol-description-input input,
+textarea {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    width: 90%;
+    overflow: hidden;
+    border-bottom: 1px solid #000000;
+    margin: 10px auto;
+}
+
+.idol-message button {
+    width: 100%;
+    border-radius: 30px;
+    height: 40px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #0abcf9;
+    background-image: linear-gradient(315deg, #0abcf9 0%, #2c69d1 74%);
+    margin-top: 10px;
 }

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #161616;">
       <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="/">Zaluda</a>
+        <a class="navbar-brand" href="/home">Zaluda</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -34,7 +34,7 @@
                 </button>
               </div>
               <li>
-                <button @click="logOut()" class="" style="" v-if="isLogin">Sign out</button>
+                <button @click="logOut()" class="singOutBtn" style="" v-if="isLogin">Sign out</button>
               </li>
           </ul>
         </div>
