@@ -6,13 +6,14 @@ import CountryFlag from 'vue-country-flag'
 import idolComponent from './components/idolComponent.vue';
 import BodyComponent from './components/bodyComponent.vue';
 import ErrorComponent from './components/ErrorComponent.vue';
-
+import confirmationComponent from './components/confirmationComponent.vue';
 Vue.component('country-flag', CountryFlag)
 Vue.use(VueRouter);
 
 const routes = [
     { path: '/', redirect: '/home' },
     { path: '/home', name: 'body', component: BodyComponent },
+    { path: '/confirmation', name: 'confirmationComponent', component: confirmationComponent },
     { path: '/:Datos', name: 'idolComponent', component: idolComponent },
     { path: '*', name: 'error404', component: ErrorComponent },
 

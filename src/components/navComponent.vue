@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #161616;">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark"
+      style="background-color: #161616"
+    >
       <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="/home">Zaluda</a>
         <button
@@ -19,7 +22,7 @@
           id="navbarSupportedContent"
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-            <li  v-if="isLogin">
+            <li v-if="isLogin">
               <a class="nav-link active" aria-current="page"
                 >Welcome, {{ userName }}</a
               >
@@ -33,9 +36,21 @@
                   Sign up with Google
                 </button>
               </div>
-              <li>
-                <button @click="logOut()" class="singOutBtn" style="" v-if="isLogin">Sign out</button>
-              </li>
+            </li>
+
+            <li v-if="isLogin">
+              <i class="fas fa-bell"></i>
+            </li>
+            <li>
+              <button
+                @click="logOut()"
+                class="singOutBtn"
+                style=""
+                v-if="isLogin"
+              >
+                Sign out
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -59,8 +74,8 @@ export default {
       console.log(localStorage.getItem("login"));
       this.isLogin = true;
       this.userName = localStorage.getItem("user");
-    }else{
-       localStorage.clear();
+    } else {
+      localStorage.clear();
     }
   },
   methods: {

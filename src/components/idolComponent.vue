@@ -77,7 +77,9 @@
                 v-model="message2"
               ></textarea>
             </div>
-            <button @click="saveRequests()">Send</button>
+            <router-link to="/confirmation">
+              <button @click="saveRequests()">Next</button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -135,7 +137,7 @@ export default {
           let textarea = document.getElementById("textarea");
           input.value = "";
           textarea.value = "";
-          alert('Send');
+          alert("Send");
         }
       });
     },

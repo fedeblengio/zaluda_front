@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <headerComponent></headerComponent>
     <section class="py-5">
       <div class="container photo-cont">
         <div class="photo-card" v-for="todo in user" :key="todo.id">
@@ -34,11 +35,13 @@
 <script >
 import { global } from "../global";
 import CountryFlag from "vue-country-flag";
+import headerComponent from "../components/headerComponent.vue";
 import axios from "axios";
 export default {
   name: "HomeComponent",
   components: {
     CountryFlag,
+    headerComponent,
   },
   data() {
     return {
