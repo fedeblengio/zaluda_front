@@ -23,7 +23,7 @@
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
             <li v-if="isLogin">
-              <a class="nav-link active" aria-current="page"
+              <a class="nav-link" aria-current="page"
                 >Welcome, {{ userName }}</a
               >
             </li>
@@ -37,9 +37,25 @@
                 </button>
               </div>
             </li>
-
             <li v-if="isLogin">
-              <i class="fas fa-bell"></i>
+              <router-link to="/profile">
+                <a class="nav-link">My profile</a>
+              </router-link>
+            </li>
+            <li v-if="isLogin">
+              <div class="noti-icon" @click="showNoti()">
+                <i class="fas fa-bell"></i>
+                <span
+                  class="sidebarDot_event"
+                  id="sidebarDot_event"
+                  v-if="noti"
+                ></span>
+                <div class="noti-conte" id="noti">
+                  <router-link to="/profile">
+                    <p class="">Your message is ready</p>
+                  </router-link>
+                </div>
+              </div>
             </li>
             <li>
               <button
@@ -67,6 +83,9 @@ export default {
       isLogin: false,
       userInfo: "",
       userName: "",
+      aux: 1,
+      user: "",
+      noti: true,
     };
   },
   mounted() {
@@ -74,6 +93,7 @@ export default {
       console.log(localStorage.getItem("login"));
       this.isLogin = true;
       this.userName = localStorage.getItem("user");
+      this.getData();
     } else {
       localStorage.clear();
     }
@@ -110,6 +130,30 @@ export default {
           localStorage.setItem("userId", this.userInfo.TW);
         }
       });
+    },
+    showNoti() {
+      let noti = document.getElementById("noti");
+      if (this.aux == 0) {
+        noti.style.display = "none";
+        this.aux = 1;
+      } else {
+        noti.style.display = "block";
+        this.aux = 0;
+      }
+    },
+    getData() {
+      let config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      axios
+        .get(global.url + "response/" + this.userName, config)
+        .then((res) => {
+          if (res.status == 200) {
+            this.user = res.data;
+          }
+        });
     },
   },
 };

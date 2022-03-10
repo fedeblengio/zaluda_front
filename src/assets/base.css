@@ -118,7 +118,7 @@ a {
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 30px;
+    margin-top: 100px;
 }
 
 .idol-description {
@@ -259,4 +259,106 @@ textarea {
 
 .idol-message button:hover {
     cursor: pointer;
+}
+
+.confimationContenedor {
+    display: flex ;
+    justify-content: center;
+    height: 80vh;
+    flex-direction: column;
+
+}
+.confimationContenedor i {
+   font-size:100px;
+   color: green;
+   margin: 1px auto;
+}
+.confimationContenedor h1{
+    font-size: 30px;
+    margin-top: 30px;
+   text-align: center;
+}
+
+.noti-icon {
+    position: relative;
+    margin-top:10px ;
+    margin-left: 20px;
+   
+}
+
+.noti-icon i {
+    color:white;
+    font-size: 18px;
+    margin:2px auto;
+   
+}
+
+.noti-conte{
+    display: none;
+    margin-top: 15px;
+    padding: 8px;
+    color:black;
+    position: absolute;
+    width: 200px;
+    margin-left: -80px;
+    background-color: white;
+    text-decoration: none;
+    outline: none;
+    border-radius:7px ;
+}
+.noti-conte p{
+    margin-top: 5px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.messages{
+    margin-bottom: 50px;
+   
+}
+.messages h1{
+    text-align: center;
+}
+.photo-cont-message{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.photo-cont-message img {
+    width: 12rem;
+    height: 16rem;
+    margin: 0.5rem;
+    border-radius: 7px;
+    object-fit: cover;
+}
+.message-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.message-card-text{
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.sidebarDot_event {
+    height: 0.5rem;
+    width: 0.5rem;
+    border-radius: 50%;
+    background-color:red;
+    display: inline-block;
+    margin-bottom: -9px;
+    margin-left: -5px;
+}
+.myproflie{
+    text-decoration: none;
+    color: rgb(255, 17, 17);
+    margin-top: 10px;
+  
+}
+.nav-link a{
+    color: white !important;
 }
