@@ -136,12 +136,30 @@ export default {
             let textarea = document.getElementById("textarea");
             input.value = "";
             textarea.value = "";
+            this.saveSale();
             this.$router.push("/confirmation");
           }
         });
       } else {
         alert("You need to login to access for this function");
       }
+    },
+    saveSale() {
+      let config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      let data = {
+        id_google: this.google_id,
+        id_idols: this.datos[0].id,
+        price: this.datos[0].price,
+      };
+      axios.post(global.url + "sale", data, config).then((res) => {
+        if (res.status == 200) {
+       
+        }
+      });
     },
     selectEvents(id) {
       let elements = document.getElementsByClassName(
