@@ -77,9 +77,7 @@
                 v-model="message2"
               ></textarea>
             </div>
-            <router-link to="/confirmation">
-              <button @click="saveRequests()">Next</button>
-            </router-link>
+            <button @click="saveRequests()">Next</button>
           </div>
         </div>
       </div>
@@ -114,32 +112,36 @@ export default {
   },
   methods: {
     saveRequests() {
-      let config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      let data = {
-        id_google: this.google_id,
-        id_idols: this.datos[0].id,
-        message:
-          "Video for " +
-          this.message +
-          " /// " +
-          this.event +
-          " /// " +
-          "This is the message: " +
-          this.message2,
-      };
-      axios.post(global.url + "requests", data, config).then((res) => {
-        if (res.status == 200) {
-          let input = document.getElementById("input");
-          let textarea = document.getElementById("textarea");
-          input.value = "";
-          textarea.value = "";
-          alert("Send");
-        }
-      });
+      if (localStorage.getItem("login")) {
+        let config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        let data = {
+          id_google: this.google_id,
+          id_idols: this.datos[0].id,
+          message:
+            "Video for " +
+            this.message +
+            " /// " +
+            this.event +
+            " /// " +
+            "This is the message: " +
+            this.message2,
+        };
+        axios.post(global.url + "requests", data, config).then((res) => {
+          if (res.status == 200) {
+            let input = document.getElementById("input");
+            let textarea = document.getElementById("textarea");
+            input.value = "";
+            textarea.value = "";
+            this.$router.push("/confirmation");
+          }
+        });
+      } else {
+        alert("You need to login to access for this function");
+      }
     },
     selectEvents(id) {
       let elements = document.getElementsByClassName(

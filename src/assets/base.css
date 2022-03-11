@@ -262,65 +262,66 @@ textarea {
 }
 
 .confimationContenedor {
-    display: flex ;
+    display: flex;
     justify-content: center;
     height: 80vh;
     flex-direction: column;
+}
 
-}
 .confimationContenedor i {
-   font-size:100px;
-   color: green;
-   margin: 1px auto;
+    font-size: 100px;
+    color: green;
+    margin: 1px auto;
 }
-.confimationContenedor h1{
+
+.confimationContenedor h1 {
     font-size: 30px;
     margin-top: 30px;
-   text-align: center;
+    text-align: center;
 }
 
 .noti-icon {
     position: relative;
-    margin-top:10px ;
+    margin-top: 10px;
     margin-left: 20px;
-   
 }
 
 .noti-icon i {
-    color:white;
+    color: white;
     font-size: 18px;
-    margin:2px auto;
-   
+    margin: 2px auto;
 }
 
-.noti-conte{
+.noti-conte {
     display: none;
     margin-top: 15px;
     padding: 8px;
-    color:black;
+    color: black;
     position: absolute;
     width: 200px;
     margin-left: -80px;
     background-color: white;
     text-decoration: none;
     outline: none;
-    border-radius:7px ;
+    border-radius: 7px;
 }
-.noti-conte p{
+
+.noti-conte p {
     margin-top: 5px;
     text-decoration: none;
     color: black;
     font-weight: bold;
 }
 
-.messages{
+.messages {
     margin-bottom: 50px;
-   
 }
-.messages h1{
+
+.messages h1 {
     text-align: center;
 }
-.photo-cont-message{
+
+.photo-cont-message {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -334,12 +335,14 @@ textarea {
     border-radius: 7px;
     object-fit: cover;
 }
-.message-card{
+
+.message-card {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.message-card-text{
+
+.message-card-text {
     margin-top: 30px;
     font-size: 30px;
 }
@@ -348,17 +351,22 @@ textarea {
     height: 0.5rem;
     width: 0.5rem;
     border-radius: 50%;
-    background-color:red;
+    background-color: red;
     display: inline-block;
     margin-bottom: -9px;
     margin-left: -5px;
 }
-.myproflie{
+
+.myproflie {
     text-decoration: none;
     color: rgb(255, 17, 17);
     margin-top: 10px;
-  
 }
-.nav-link a{
+
+.nav-link a {
     color: white !important;
+}
+
+.profile_text {
+    text-align: center;
 }

@@ -52,7 +52,8 @@
                 ></span>
                 <div class="noti-conte" id="noti">
                   <router-link to="/profile">
-                    <p class="">Your message is ready</p>
+                    <p class="profile_text" v-if="noti">Your message is ready</p>
+                    <p class="profile_text" v-else>Nothing yet.</p>
                   </router-link>
                 </div>
               </div>
@@ -76,6 +77,7 @@
 <script>
 import { global } from "../global";
 import axios from "axios";
+import $ from "jquery";
 export default {
   name: "navComponent",
   data() {
@@ -85,12 +87,11 @@ export default {
       userName: "",
       aux: 1,
       user: "",
-      noti: true,
+      noti: false,
     };
   },
   mounted() {
     if (localStorage.getItem("login")) {
-      console.log(localStorage.getItem("login"));
       this.isLogin = true;
       this.userName = localStorage.getItem("user");
       this.getData();
@@ -147,13 +148,18 @@ export default {
           "Content-Type": "application/json",
         },
       };
-      axios
-        .get(global.url + "response/" + this.userName, config)
-        .then((res) => {
-          if (res.status == 200) {
+      let id = localStorage.getItem("userId");
+      axios.get(global.url + "response/" + id, config).then((res) => {
+        if (res.status == 200) {
+          this.user = res.data;
+          if ($.isEmptyObject(res.data)) {
+            this.noti = false;
+          } else {
+            this.noti = true;
             this.user = res.data;
           }
-        });
+        }
+      });
     },
   },
 };
